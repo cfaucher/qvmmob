@@ -1,0 +1,45 @@
+<?php
+// regler les balises meta
+$this->headMeta()->appendHttpEquiv("Content-Type", "text/html; charset=ISO-8851-1");
+
+// rŽgler les liens dans votre script de vue :
+
+
+// rŽgler le titre
+$this->headTitle ('Application de gestion de personnes');	
+// rŽgler les liens dans votre script de vue :
+
+$this->headLink()->appendStylesheet('/GestPersonne/public/styles/cssGeneral.css');
+
+
+
+// Affichage de la page
+// en premier, le doctype
+echo $this->doctype() ;
+?>
+<html>
+	<head>
+		<?php 
+		echo $this->headMeta();
+		echo $this->headLink();
+		echo $this->headTitle();
+		
+	    ?>
+	    
+	</head>
+	<body>
+		<div class="container">
+			<div id="header">
+			<?php echo $this->partial('header.phtml', array('pageTitle'=>'titre de la page')); ?>
+			</div>
+			
+			<div class="contenu">
+			<?php echo $this->layout()->content; ?>
+			</div>
+		
+			<div id="footer">
+			<?php echo $this->partial('footer.phtml', array('pageFooter'=>'bas de la page')); ?>
+			</div>
+		</div>
+	</body>
+</html>
